@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0081)file:///D:/Users/osmora/Downloads/index_timeline_layout_theme_toggle_noprose.html -->
+<!-- saved from url=(0059)file:///D:/Users/osmora/Downloads/index_ribbons_blanco.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Banco Promerica · Informe Ejecutivo RRHH — Versión 2</title>
 <meta name="theme-color" content="#006837">
-<link href="./Banco Promerica · Informe Ejecutivo RRHH — Versión 2_files/css2" rel="stylesheet">
+<link href="file:///D:/Users/osmora/Downloads/Banco%20Promerica%20%C2%B7%20Informe%20Ejecutivo%20RRHH%20%E2%80%94%20Versi%C3%B3n%202_files/css2" rel="stylesheet">
 <style>
   :root{
     --green-950:#006837; --green-900:#006837; --green-800:#006837; --green-700:#006837; --green-600:#006837;
@@ -255,6 +255,86 @@ body.theme-dark{
 /* refuerzos para contrastes en oscuro */
 body.theme-dark .tl-card{box-shadow:0 18px 44px rgba(0,0,0,.10)}
 body.theme-dark header{color:#fff}
+</style>
+
+<style id="ribbons-clarity-override">
+/* === Mejora de claridad para los cuadros de relaciones (.ribbons > .rib) === */
+.ribbons{gap:16px; margin-top:16px; grid-template-columns: repeat(3, minmax(260px,1fr));}
+@media (max-width:900px){ .ribbons{ grid-template-columns:1fr } }
+
+.rib{
+  position:relative; overflow:hidden;
+  /* Gradiente más legible y consistente con la marca */
+  background:linear-gradient(90deg, #0a6a43 0%, #2f8f60 45%, #eaf6f0 100%);
+  border:1px solid #bfe1d2; 
+  border-left:10px solid #0a6a43;
+  border-radius:18px; 
+  padding:14px 18px; 
+  font-size:14px; 
+  line-height:1.35; 
+  color:#0e3328;
+  box-shadow:0 16px 36px rgba(0,0,0,.10);
+}
+/* Subrayamos términos clave (los <b>) con una píldora clara para contraste */
+.rib b{
+  font-weight:900; 
+  letter-spacing:.2px;
+  color:#0a2f22;
+  background:rgba(255,255,255,.78);
+  padding:2px 8px; 
+  border-radius:999px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset;
+}
+
+/* Pequeño brillo superior para dar profundidad sin perder legibilidad */
+.rib::after{
+  content:""; position:absolute; left:0; right:0; top:0; height:40%;
+  background:linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0));
+  pointer-events:none;
+}
+
+/* Tema oscuro: mantenemos contraste y marca */
+body.theme-dark .rib{
+  background:linear-gradient(90deg, #004b2a 0%, #0f6a43 45%, #e3f3eb 100%);
+  border-color:#a8d5c4;
+  color:#09281d;
+}
+body.theme-dark .rib b{
+  background:rgba(255,255,255,.82);
+  color:#082519;
+}
+</style>
+
+<style id="ribbons-clarity-override-white">
+/* === Quitar sombra/tono verde y dejar los cuadros blancos === */
+.ribbons { gap: 16px; }
+
+.ribbons .rib{
+  background:#ffffff !important;
+  border:1px solid #e5e7eb !important;
+  border-left:0 !important;
+  color:#0f172a !important; /* neutral foreground */
+  box-shadow:0 10px 26px rgba(0,0,0,.06) !important;
+}
+
+/* Remover cualquier brillo/overlay que agregue tonos */
+.ribbons .rib::after{ content:none !important; }
+
+/* Términos en negrita: solo negrita, sin píldora */
+.ribbons .rib b{
+  font-weight:800;
+  background:none !important;
+  color:#0f172a !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+
+/* Tema oscuro: mantenemos blanco para consistencia solicitada */
+body.theme-dark .ribbons .rib{
+  background:#ffffff !important;
+  color:#0f172a !important;
+  border-color:#e5e7eb !important;
+}
 </style>
 </head>
 <body class="">
